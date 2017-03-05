@@ -1,0 +1,96 @@
+@import "../../common/css/mixin";
+
+@rem: 50rem;
+#header {
+  background-color: palegreen;
+  .content-wrapper {
+    display: flex;
+    padding: 48 / @rem 24 / @rem 36 / @rem 48 / @rem;
+    color: #fff;
+    .headerImg {
+      width: 128 / @rem;
+      height: 128 / @rem;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 2 / @rem;
+      }
+    }
+    .headerDesc {
+      margin-left: 32 / @rem;
+      flex: 1;
+      .title {
+        margin-top: 4 / @rem;
+        margin-bottom: 16 / @rem;
+        .brand {
+          display: inline-block;
+          vertical-align: top;
+          width: 60 / @rem;
+          height: 36 / @rem;
+          .bgImage('../../components/header/brand');
+        }
+        .name {
+          margin-left: 12 / @rem;
+          vertical-align: top;
+          .fontSize(32 / @rem, 'bold', 36 / @rem);
+        }
+      }
+    }
+    .desc {
+      margin-top: 16 / @rem;
+      .fontSize(24 / @rem, 200, 24 / @rem);
+    }
+    .supports {
+      margin-top: 20 / @rem;
+      position: relative;
+      .icon {
+        display: inline-block;
+        vertical-align: top;
+        width: 24 / @rem;
+        height: 24 / @rem;
+      }
+      .text {
+        vertical-align: top;
+        margin-left: 8 / @rem;
+        .fontSize(20 / @rem, 200, 24 / @rem);
+      }
+      .arrow {
+        position: absolute;
+        right: 0;
+        top: -6px;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 999px;
+        padding: 0 16 / @rem;
+        .fontSize(20 / @rem, 200, 48 / @rem);
+      }
+    }
+
+  }
+  .ad-wrapper {
+    display: flex;
+    line-height: 56 / @rem;
+    background-color: rgba(7, 17, 27, .2);
+    padding: 0 24 / @rem;
+    color: #fff;
+    .icon {
+      width: 44 / @rem;
+      height: 24 / @rem;
+      margin-right: 8 / @rem;
+      margin-top: 16 / @rem;
+      .bgImage('../../components/header/bulletin');
+    }
+    .text {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      .fontSize(20 / @rem, 200, 56 / @rem);
+    }
+    .arrow {
+      margin-left: 8 / @rem;
+      font-size: 14 / @rem;
+      line-height: 56 / @rem;
+    }
+  }
+}
+

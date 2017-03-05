@@ -1,0 +1,51 @@
+/**
+  移动端一像数解决办法
+  使用less方法实现
+  实现原理: 给元素添加一个伪类,然后再利用media实现相应的缩放
+**/
+.borderBottomOnePix(@color) {
+  position: relative;
+  &:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-bottom: 1px solid @color;
+    content: '';
+  }
+}
+
+.borderTopOnePix(@color) {
+  position: relative;
+  &:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    border-top: 1px solid @color;
+    content: '';
+  }
+}
+
+/**
+* 设置字体大小,行高及权重
+*/
+.fontSize(@size,@weight,@lineHeight) {
+  font-size: @size;
+  font-weight: @weight;
+  line-height: @lineHeight;
+}
+
+/**
+  根据不同分辨率显示不同的背景图
+**/
+.bgImage(@url) {
+  background-image: url('@{url}@2x.png');
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3){
+    background-image: url('@{url}@3x.png');
+  }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+

@@ -6,6 +6,9 @@
 </style>
 <script type="text/ecmascript-6">
   export default{
-    name: 'Seller'
+    name: 'Seller',
+    created() {
+      console.log('created');
+    }
   };
 </script>

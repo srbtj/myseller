@@ -1,6 +1,30 @@
+/**
+* 移动端 1px处理:
+*  写时出现一个bug, 写兼容性样式时 不用and连接 而是用 , 连接
+*/
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5) {
+  .borderBottomOnePix {
+    &::after {
+      -webkit-transform: scaleY(.66);
+      transform: scaleY(.66);
+    }
+  }
+}
 
-.fontSize(@size,@weight,@lineHeight){
-  font-size: @size;
-  font-weight: @weight;
-  line-height: @lineHeight;
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+  .borderBottomOnePix {
+    &::after {
+      -webkit-transform: scaleY(.5);
+      transform: scaleY(.5);
+    }
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+  .borderBottomOnePix {
+    &::after {
+      -webkit-transform: scaleY(.33);
+      transform: scaleY(.33);
+    }
+  }
 }

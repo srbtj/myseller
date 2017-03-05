@@ -1,6 +1,6 @@
 <template>
-  <div id="tab">
-    <router-link to="/goods" class="tabItem active">商品</router-link>
+  <div id="tab" class="borderBottomOnePix">
+    <router-link to="/goods" class="tabItem">商品</router-link>
     <router-link to="/ratings" class="tabItem">评价</router-link>
     <router-link to="/sellers" class="tabItem">商家</router-link>
   </div>
