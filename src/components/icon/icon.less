@@ -1,0 +1,23 @@
+@import "../../common/css/mixin";
+@rem : 50rem;
+.icon{
+  display: inline-block;
+  vertical-align: top;
+  width: 24 / @rem;
+  height: 24 / @rem;
+  &.decrease{
+    .bgImage('../../components/icon/decrease_2');
+  }
+  &.discount{
+    .bgImage('../../components/icon/discount_1');
+  }
+  &.special{
+    .bgImage('../../components/icon/special_1');
+  }
+  &.invoice{
+    .bgImage('../../components/icon/invoice_1');
+  }
+  &.guarantee{
+    .bgImage('../../components/icon/guarantee_1');
+  }
+}

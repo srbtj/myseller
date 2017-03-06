@@ -15,11 +15,11 @@
           <span>{{ seller.deliveryTime}}分钟送达</span>
         </div>
         <div class="supports" v-if="seller.supports">
-          <span class="icon"></span>
+          <Icon :number="seller.supports[0].type"></Icon>
           <span class="text">{{ seller.supports[0].description }}</span>
           <div class="arrow">
             <span class="number">5个</span>
-            <span class="icon-keyboard_arrow_right"></span>
+            <span class="icon-keyboard_arrow_right right"></span>
           </div>
         </div>
       </div>
@@ -37,12 +37,14 @@
   @import "header.less";
 </style>
 <script type="text/ecmascript-6">
+  import Icon from 'components/icon/Icon';
   export default{
     name: 'Header',
     props: {
       seller: {
         type: Object
       }
-    }
+    },
+    components: {Icon}
   };
 </script>
