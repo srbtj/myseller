@@ -5,6 +5,7 @@ import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 import App from './App';
 import Seller from 'components/seller/Seller';
+import Goods from 'components/goods/Goods';
 
 /**
  *  引入公共的 css 样式
@@ -17,7 +18,8 @@ Vue.config.productionTip = false;
 
 /** 第二步 定义路由 **/
 const routes = [
-  {path: '/sellers', component: Seller}
+  {path: '/sellers', component: Seller},
+  {path: '/goods', component: Goods}
 ];
 
 /** 第三步  创建路由实例 **/

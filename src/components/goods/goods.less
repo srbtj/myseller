@@ -1,0 +1,48 @@
+@import "../../common/css/mixin";
+
+@rem: 50rem;
+
+.goods-wrapper {
+  display: flex;
+  position: absolute;
+  top: 348 / @rem;
+  bottom: 96 / @rem;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+
+  .menu-wrapper {
+    flex: 0 0 160 / @rem;
+    background-color: #f3f5f7;
+    .menuList {
+      .menuItem {
+        height: 108 / @rem;
+        padding: 0 24 / @rem;
+
+        .item {
+          display: flex;
+          height: 100%;
+          .borderBottomOnePix(rgba(7, 17, 27, .1));
+
+          span {
+            align-self: center;
+            color: #07111b;
+            .fontSize(24 / @rem, 200, 28 / @rem);
+          }
+        }
+
+        &.active, &:nth-of-type(2) {
+          background-color: #fff;
+          .item {
+            .borderBottomNone();
+            span{
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
