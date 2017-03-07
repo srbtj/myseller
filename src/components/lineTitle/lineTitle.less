@@ -1,0 +1,18 @@
+@rem: 50rem;
+@import "../../common/css/mixin";
+
+.lineTitle {
+  display: flex;
+  position: relative;
+  .line {
+    flex: 1;
+    position: relative;
+    top: -14 / @rem;
+    .borderBottomOnePix(rgba(255,255,255,.8));
+  }
+  .text{
+    padding:0 24 / @rem;
+    .fontSize(28 / @rem, 700, 28 / @rem);
+    color: #fff;
+  }
+}

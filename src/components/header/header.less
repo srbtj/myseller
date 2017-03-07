@@ -2,7 +2,9 @@
 
 @rem: 50rem;
 #header {
-  background-color: palegreen;
+  background-color: rgba(7, 17, 27, .5);
+  position: relative;
+  overflow: hidden;
   .content-wrapper {
     display: flex;
     padding: 48 / @rem 24 / @rem 36 / @rem 48 / @rem;
@@ -57,10 +59,10 @@
         border-radius: 999px;
         padding: 0 16 / @rem;
 
-        .number{
+        .number {
           .fontSize(20 / @rem, 200, 48 / @rem);
         }
-        .right{
+        .right {
           margin-left: 12 / @rem;
           .fontSize(12 / @rem, 'normal', 48 / @rem)
         }
@@ -94,6 +96,94 @@
       font-size: 20 / @rem;
       line-height: 56 / @rem;
       margin-top: 2 / @rem;
+    }
+  }
+  .bgImg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    filter: blur(10px);
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .mask-fade-enter-active,
+  .mask-fade-leave-active{
+    transition: all .5s;
+  }
+
+  .mask-fade-enter,
+  .mask-fade-leave-active{
+    opacity: 0;
+    transform: scale(.5);
+  }
+
+  .mask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: rgba(7, 17, 27, .8);
+    overflow: auto;
+    backdrop-filter: blur(5px);
+    .ctx-wrapper {
+      min-height: 100%;
+      .mask-ctx {
+        padding: 128 / @rem 72 / @rem;
+        text-align: center;
+        color: #fff;
+
+        .title {
+          .fontSize(32 / @rem, 700, 32 / @rem);
+        }
+        .starWrap {
+          margin-top: 32 / @rem;
+        }
+
+        .favour {
+          margin-top: 56 / @rem;
+        }
+
+        .favourInfo {
+          text-align: left;
+          padding: 24 / @rem 24 / @rem 0;
+          .infoItem {
+            margin-top: 24 / @rem;
+            .itemIcon {
+              width: 32 / @rem;
+              height: 32 / @rem;
+              vertical-align: top;
+            }
+            .itemText {
+              vertical-align: top;
+              .fontSize(24 / @rem, 200, 32 / @rem);
+            }
+          }
+
+        }
+
+        .description {
+          padding: 48 / @rem 24 / @rem 150 / @rem;
+          text-align: left;
+          span {
+            .fontSize(24 / @rem, 200, 48 / @rem);
+          }
+        }
+      }
+    }
+    .close-wrapper {
+      color: #fff;
+      font-size: 64 / @rem;
+      text-align: center;
+      height: 128 / @rem;
+      margin-top: -128 / @rem;
     }
   }
 }
