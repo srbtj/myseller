@@ -26,7 +26,6 @@
     },
     methods: {
       getSeller: (root) => {
-        console.log(root);
         root.$http.get('/api/seller')
           .then((response) => {
             let data = response.body;

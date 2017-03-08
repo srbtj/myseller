@@ -15,7 +15,7 @@
           <span>{{ seller.deliveryTime}}分钟送达</span>
         </div>
         <div class="supports" v-if="seller.supports">
-          <Icon :number="seller.supports[0].type"></Icon>
+          <Icon :number="seller.supports[0].type" :size="1"></Icon>
           <span class="text">{{ seller.supports[0].description }}</span>
           <div class="arrow" @click="hasShowMask">
             <span class="number">5个</span>
@@ -48,7 +48,7 @@
 
             <div class="favourInfo" v-if="seller.supports">
               <div class="infoItem" v-for="item in seller.supports">
-                <Icon :number="item.type" class="itemIcon"></Icon>
+                <Icon :number="item.type" class="itemIcon" :size="1"></Icon>
                 <span class="itemText">{{ item.description }}</span>
               </div>
             </div>

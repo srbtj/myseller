@@ -18,6 +18,7 @@ Vue.config.productionTip = false;
 
 /** 第二步 定义路由 **/
 const routes = [
+  {path: '/', redirect: '/goods'},
   {path: '/sellers', component: Seller},
   {path: '/goods', component: Goods}
 ];
