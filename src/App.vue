@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <v-header :seller="seller"></v-header>
-    <Tab/>
+    <Tab :seller="seller"/>
     <!-- 路由出口  将在这里渲染内容 -->
     <router-view></router-view>
   </div>
