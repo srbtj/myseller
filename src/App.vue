@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <v-header :seller="seller"></v-header>
-    <Tab :seller="seller"/>
+    <Tab/>
     <!-- 路由出口  将在这里渲染内容 -->
-    <router-view></router-view>
+    <router-view :seller="seller"></router-view>
   </div>
 </template>
 

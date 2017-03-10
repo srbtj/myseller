@@ -35,6 +35,9 @@
                 <div class="price">
                   <span class="curPrice">￥<span class="boldText">{{food.price}}</span></span>
                   <span class="oldPrice" v-show="food.oldPrice">￥{{food.oldPrice}}</span>
+                  <div class="cart-wrapper">
+                    <CartControl :food="food"/>
+                  </div>
                 </div>
               </div>
             </div>
@@ -42,7 +45,11 @@
         </ul>
       </div>
     </div>
-    <ShopCart :seller="seller"/>
+    <ShopCart
+      :minPrice="seller.minPrice"
+      :deliveryPrice="seller.deliveryPrice"
+      :selectFoods="selectFoods"
+    />
   </div>
 
 </template>
@@ -53,13 +60,18 @@
   import Icon from 'components/icon/Icon';
   import BScroll from 'better-scroll';
   import ShopCart from 'components/shopCart/ShopCart';
+  import CartControl from 'components/cartControl/CartControl';
   let ERR_NO = 0;
   export default{
     name: 'goods',
+    props: {
+      seller: {
+        type: Object
+      }
+    },
     data() {
       return {
         goods: [],
-        seller: {},
         liHeight: [],
         scrollY: 0
       };
@@ -76,18 +88,11 @@
             });
           }
         });
-
-      this.$http.get('/api/seller')
-        .then(function (response) {
-          let data = response.body;
-          if (data.errno === 0) {
-            this.seller = data.data;
-          }
-        });
     },
     components: {
       Icon,
-      ShopCart
+      ShopCart,
+      CartControl
     },
     methods: {
       _initScroll() { // 初始化滚动元素
@@ -95,7 +100,8 @@
           click: true
         });
         this.foodScroll = new BScroll(this.$el.querySelector('.foods-wrapper'), {
-          probeType: 3
+          probeType: 3,
+          click: true
         });
 
         this.foodScroll.on('scroll', (pos) => {  // 获得当前滚动的值
@@ -130,6 +136,15 @@
           }
         }
         return 0;
+      },
+      selectFoods() {
+        let tempArr = [];
+        this.goods.map((item) => {
+          item.foods.map((food) => {
+            if (food.count > 0) tempArr.push(food);
+          });
+        });
+        return tempArr;
       }
     }
   };

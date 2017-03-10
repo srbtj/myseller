@@ -17,12 +17,12 @@
     position: relative;
     color: #fff;
     font-size: 0;
-    &:before{
+    &:before {
       content: '';
       position: absolute;
       left: 30 / @rem;
       top: -20 / @rem;
-      width:100 / @rem;
+      width: 100 / @rem;
       height: 100 / @rem;
       border-radius: 50 / @rem;
       background-color: #141d27;
@@ -37,10 +37,29 @@
       background-color: #2b343c;
       text-align: center;
 
+      &.highlight {
+        background-color: #00a0dc;
+      }
       .icon {
         color: #80858a;
-        font-size:40 / @rem;
+        font-size: 40 / @rem;
         line-height: 88 / @rem;
+
+        &.highlight {
+          color: #fff;
+        }
+      }
+
+      .count {
+        position: absolute;
+        top: -12 / @rem;
+        right: -12 / @rem;
+        width: 48 / @rem;
+        text-align: center;
+        .fontSize(18 / @rem, 400, 32 / @rem);
+        background-color: #f01414;
+        border-radius: 999 / @rem;
+        box-shadow: 0 4 / @rem 8 / @rem 0 rgba(0, 0, 0, .4);
       }
     }
 
@@ -48,11 +67,14 @@
       display: inline-block;
       .fontSize(20 / @rem, 700, 48 / @rem);
       margin-top: 24 / @rem;
-      color: rgba(255,255,255,.4);
+      color: rgba(255, 255, 255, .4);
     }
     .price {
       margin-left: 160 / @rem;
       margin-right: 24 / @rem;
+      &.highlight {
+        color: #fff;
+      }
     }
     .deliveryPrice {
       border-left: 1 / @rem solid rgba(255, 255, 255, .1);
@@ -65,6 +87,13 @@
     text-align: center;
     background-color: #2b333b;
     height: 100%;
+
+    &.highlight {
+      background-color: #00b43c;
+      span {
+        color: #fff;
+      }
+    }
     span {
       .fontSize(24 / @rem, 700, 96 / @rem);
       color: rgba(255, 255, 255, .4);

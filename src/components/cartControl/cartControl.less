@@ -1,0 +1,44 @@
+@import "../../common/css/mixin";
+
+@rem: 50rem;
+.cart {
+  font-size: 0;
+  .cart-decrease,
+  .cart-count,
+  .cart-increase {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 48 / @rem;
+    line-height: 48 / @rem;
+    color: rgb(0, 160, 220);
+  }
+  .cart-count{
+    width: 48 / @rem;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(147,153,159);
+    //padding-top: 6 / @rem;
+  }
+  .cart-decrease,
+  .cart-increase{
+    //padding: 6 / @rem;
+  }
+
+  .cart-fade-enter,
+  .cart-fade-leave-active{
+    opacity: 0;
+    transform: translate3D(48 / @rem,0,0);
+    .cart-inner{
+      display: inline-block;
+      transform:rotate(360deg);
+    }
+  }
+
+  .cart-fade-enter-active,
+  .cart-fade-leave-active{
+    transition: all .3s linear;
+    .cart-inner{
+      transition: all .3s linear;
+    }
+  }
+}

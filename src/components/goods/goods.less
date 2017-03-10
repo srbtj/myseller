@@ -103,8 +103,9 @@
             }
           }
           .price{
-            //margin-top: 8 / @rem;
+            margin-top: 8 / @rem;
             .fontSize(20 / @rem, 700, 48 / @rem);
+            position: relative;
             .curPrice{
               color: #f01414;
               .boldText{
@@ -115,6 +116,11 @@
               margin-left: 16 / @rem;
               text-decoration: line-through;
             }
+          }
+          .cart-wrapper{
+            position: absolute;
+            right: 0;
+            top:0;
           }
         }
       }
